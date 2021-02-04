@@ -10,12 +10,12 @@ client = discord.Client()
 
 #funct to print help message so users can find out how it works
 async def instructions(message):
-    await message.channel.send("This bot will call people for you with a message"
-                         "Note you'll never have to write the <> symbols it's just to make the command clearer"
-                         
-                         "=addme @name <message>"
-                         "Adds @name to the list or overwrite the entry with the following command:"
-                         "=summon <>"
+    await message.channel.send("This bot will call people for you with a message\n"
+                         "Note you'll never have to write the <> symbols it's just to make the command clearer\n"
+                         "=addme @name <message>\n"
+                         "Adds @name to the list or overwrite the entry with the following command:\n"
+                         "=summon <@name>\n"
+                         "Calls a user with their recorded message"
                          )
 
 #funct to check if user is in database
@@ -44,12 +44,12 @@ async def on_message(message):
         return
 
 #----------------------------------------------------------------------------------
-    if message.content.startswith("=helpme"):
-        instructions(message)
+    if message.content.startswith("=help"):
+        await instructions(message)
 
 
 # ----------------------------------------------------------------------------------
-    elif message.content.startswith("=addme "):
+    elif message.content.startswith("=add "):
         m_container = message.content.split(' ')
         user = m_container[1]
         summoning_ritual = ""
