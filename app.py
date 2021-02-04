@@ -59,6 +59,9 @@ async def on_message(message):
                 summoning_ritual += element + " "
             i+=1
 
+        if summoning_ritual == "":
+            summoning_ritual = " "
+
         if in_database(user):
             #if user is in database, remove this entry before adding to database
             connection = sqlite3.connect('database.db')
