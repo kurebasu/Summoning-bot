@@ -2,7 +2,6 @@ import discord
 import sqlite3
 import random
 import os
-from glob import glob
 
 global main_table; main_table = "summoning_table"
 
