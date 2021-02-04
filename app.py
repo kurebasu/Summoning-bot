@@ -9,8 +9,8 @@ global main_table; main_table = "summoning_table"
 client = discord.Client()
 
 #funct to print help message so users can find out how it works
-def instructions(message):
-    message.channel.send("This bot will call people for you with a message"
+async def instructions(message):
+    await message.channel.send("This bot will call people for you with a message"
                          "Note you'll never have to write the <> symbols it's just to make the command clearer"
                          
                          "=addme @name <message>"
@@ -60,7 +60,7 @@ async def on_message(message):
             i+=1
 
         if summoning_ritual == "":
-            summoning_ritual = " "
+            summoning_ritual = user
 
         if in_database(user):
             #if user is in database, remove this entry before adding to database
