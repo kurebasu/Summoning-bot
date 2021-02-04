@@ -12,7 +12,7 @@ client = discord.Client()
 async def instructions(message):
     await message.channel.send("This bot will call people for you with a message\n"
                          "Note you'll never have to write the <> symbols it's just to make the command clearer\n"
-                         "=addme @name <message>\n"
+                         "=add @name <message>\n"
                          "Adds @name to the list or overwrite the entry with the following command:\n"
                          "=summon <@name>\n"
                          "Calls a user with their recorded message"
