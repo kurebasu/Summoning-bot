@@ -115,13 +115,13 @@ async def on_message(message):
 
 
     else:
-        perry_list = os.listdir("./images/perry_specific")
-        for it in perry_list:
-            #[6:-4:1] trims off the "perry " in the beginning and the ".gif" at the end
-            if it[6:-4:1] in message.content.lower():
-                image = "images/perry_specific/" + it
+        list = os.listdir("./images/specific")
+        for it in list:
+            #[0:-4:1] trims off the ".gif" at the end
+            if it[0:-4:1] in message.content.lower():
+                image = "images/specific/" + it
                 file = discord.File(image, filename = image)
-                await message.channel.send(it[6:-4:1] +"!!!", file = file)
+                await message.channel.send(it[0:-4:1] +"!!!", file = file)
                 return
 
         probably_the_best_platypus = "perry"
